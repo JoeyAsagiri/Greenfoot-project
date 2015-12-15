@@ -45,7 +45,7 @@ public class Cyberspace extends World
 
     public void powerUpSpawn(){
         timer++;
-        if(timer % 360 == 0){
+        if(timer % 180 == 0){
             cubeSpawn();
         }
     }
