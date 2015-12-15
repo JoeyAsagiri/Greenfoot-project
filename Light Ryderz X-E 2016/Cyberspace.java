@@ -22,26 +22,20 @@ public class Cyberspace extends World
     }
 
     public void cubeSpawn(){
-        int cubeRandom = Greenfoot.getRandomNumber(6);
+        int cubeRandom = Greenfoot.getRandomNumber(5);
         int X = Greenfoot.getRandomNumber(400) + 200;
         int Y = Greenfoot.getRandomNumber(400) + 200;
-        if(cubeRandom == 6){
+        if(cubeRandom == 4){
             addObject(new PowerCubeExplosion(), X, Y);
         }
-        if(cubeRandom == 5){
+        if(cubeRandom == 3){
             addObject(new PowerCubeClean(), X, Y);
         }
-        if(cubeRandom == 4){
+        if(cubeRandom == 2){
             addObject(new PowerCubeSpeed(), X, Y);
         }
-        if(cubeRandom == 3){
-            addObject(new PowerCubeTeleport(), X, Y);
-        }
-        if(cubeRandom == 2){
-            addObject(new PowerCubeInvincibility(), X, Y);
-        }
         if(cubeRandom == 1){
-            addObject(new PowerCubeRockets(), X, Y);
+            addObject(new PowerCubeTeleport(), X, Y);
         }
     }
 

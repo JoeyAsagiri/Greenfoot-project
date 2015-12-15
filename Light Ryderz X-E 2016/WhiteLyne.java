@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BlackLyne extends Lynes
+public class WhiteLyne extends Lynes
 {
     /**
      * Act - do whatever the BlackLyne wants to do. This method is called whenever

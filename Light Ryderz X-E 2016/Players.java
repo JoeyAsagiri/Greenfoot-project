@@ -29,7 +29,6 @@ public class Players extends Actor
     public void powerUp(){        
         Actor CubeSpeed = getOneObjectAtOffset(0, 0, PowerCubeSpeed.class);
         Actor CubeTeleport = getOneObjectAtOffset(0,0, PowerCubeTeleport.class);
-        Actor CubeInvincibility = getOneObjectAtOffset(0,0, PowerCubeInvincibility.class);
         Actor CubeClean = getOneObjectAtOffset(0, 0, PowerCubeClean.class);
         Actor CubeExplosion = getOneObjectAtOffset(0, 0, PowerCubeExplosion.class);
         List Lynes = getObjectsInRange(800, Lynes.class);
@@ -43,13 +42,15 @@ public class Players extends Actor
             int Y3 = Greenfoot.getRandomNumber(800);
             int X4 = Greenfoot.getRandomNumber(800);
             int Y4 = Greenfoot.getRandomNumber(800);
-            int X5 = Greenfoot.getRandomNumber(800);
-            int Y5 = Greenfoot.getRandomNumber(800);
             getWorld().addObject(new Explosion(), X, Y);
             getWorld().addObject(new Explosion(), X2, Y2);
             getWorld().addObject(new Explosion(), X3, Y3);
-            getWorld().addObject(new Explosion(), X4, Y4);
-            getWorld().addObject(new Explosion(), X5, Y5);            
+            getWorld().addObject(new Explosion(), X4, Y4);   
+            getWorld().addObject(new Explosion(), Y, Y);
+            getWorld().addObject(new Explosion(), Y2, X2);
+            getWorld().addObject(new Explosion(), Y3, X3);
+            getWorld().addObject(new Explosion(), Y4, X4);
+
         }
         if(CubeClean != null) {
             getWorld().removeObject(CubeClean);
@@ -65,10 +66,6 @@ public class Players extends Actor
             int Y = Greenfoot.getRandomNumber(800);
             setLocation(X,Y);
         }        
-        if(CubeInvincibility != null) {
-            getWorld().removeObject(CubeInvincibility);
-            PowerInvincibility = true;
-        }
         if (PowerSpeed){
          speed = 8;
         }
@@ -86,8 +83,8 @@ public class Players extends Actor
         getWorld().addObject(new BlueLyne(), getX(), getY());
     }
 
-    public void linesBlack(){
-        getWorld().addObject(new BlackLyne(), getX(), getY());
+    public void linesWhite(){
+        getWorld().addObject(new WhiteLyne(), getX(), getY());
     }
 
     public void moving1(){

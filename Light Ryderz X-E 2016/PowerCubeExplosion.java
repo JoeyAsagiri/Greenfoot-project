@@ -14,6 +14,6 @@ public class PowerCubeExplosion extends PowerCubes
      */
     public void act() 
     {
-        // Add your action code here.
+        selfDestruct();
     }    
 }

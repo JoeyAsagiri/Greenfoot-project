@@ -13,7 +13,7 @@ public class Player4 extends Players
         powerUp();
         move(speed);
         moving4();
-        linesBlack();
+        linesWhite();
         dead();       
     }      
 }
