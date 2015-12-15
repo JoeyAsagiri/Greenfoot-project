@@ -8,16 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Lynes extends Actor
 {
-    int time = 0;
-    public void dead(){        
+    int time = 0; 
+    public void dead(){   
         time++;
-        if (time > 15) {
-        Actor enemy;
-        enemy = getOneObjectAtOffset(0,0, Players.class);     
+        Actor enemy = getOneObjectAtOffset(0,0, Players.class); 
+        if (time > 15) {   
         if (enemy != null)
-        {            
-            getWorld().addObject(new Explosion(), getX(), getY());
-            getWorld().removeObject(enemy);
+        {                        
+            Players p = (Players) enemy;
+            p.removeMe();
         }
     }
     }

@@ -20,7 +20,7 @@ public class Cyberspace extends World
         addObject(new Player4(), 750, 750);
 
     }
-
+    
     public void cubeSpawn(){
         int cubeRandom = Greenfoot.getRandomNumber(5);
         int X = Greenfoot.getRandomNumber(400) + 200;

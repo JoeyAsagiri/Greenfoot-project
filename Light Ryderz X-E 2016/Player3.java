@@ -15,6 +15,6 @@ public class Player3 extends Players
         moving3();
         linesRed();
         dead();
-        
+        time();
     }      
 }

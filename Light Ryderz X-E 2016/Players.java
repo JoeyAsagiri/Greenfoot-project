@@ -13,18 +13,37 @@ public class Players extends Actor
     boolean up;
     boolean down;
     String key = Greenfoot.getKey();
-    int speed = 4;   
+    int speed = 4;       
     boolean PowerSpeed;
     boolean PowerInvincibility;
+    int time;
+    
+    public void time(){
+     if (PowerInvincibility){  
+         time++;
+         if (time >= 120) {
+             PowerInvincibility = false;
+            }
+    }
+}
+    public void removeMe()
+    {
+        if (PowerInvincibility) {
+        }
+        else {
+      getWorld().addObject(new Explosion(), getX(), getY());
+      getWorld().removeObject(this);     
+    }
+    }
+    
     public void dead(){
         Actor enemy;
         enemy = getOneObjectAtOffset(0,0, Players.class);            
         if (enemy != null)
-        {            
-            getWorld().addObject(new Explosion(), getX(), getY());
-            getWorld().removeObject(this);            
-        }     
-    }
+        {  
+           removeMe();            
+        }      
+   }
 
     public void powerUp(){        
         Actor CubeSpeed = getOneObjectAtOffset(0, 0, PowerCubeSpeed.class);
@@ -65,6 +84,7 @@ public class Players extends Actor
             int X = Greenfoot.getRandomNumber(800);
             int Y = Greenfoot.getRandomNumber(800);
             setLocation(X,Y);
+            PowerInvincibility = true;            
         }        
         if (PowerSpeed){
          speed = 8;
@@ -279,6 +299,5 @@ public class Players extends Actor
 
     public void act() 
     {
-        // Add your action code here.
     }    
 }
