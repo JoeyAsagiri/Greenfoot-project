@@ -23,6 +23,7 @@ public class Players extends Actor
          time++;
          if (time >= 120) {
              PowerInvincibility = false;
+             time = 0;
             }
     }
 }
@@ -64,12 +65,12 @@ public class Players extends Actor
             getWorld().addObject(new Explosion(), X, Y);
             getWorld().addObject(new Explosion(), X2, Y2);
             getWorld().addObject(new Explosion(), X3, Y3);
-            getWorld().addObject(new Explosion(), X4, Y4);   
+            getWorld().addObject(new Explosion(), X4, Y4);
+            getWorld().addObject(new Explosion(), X, X);
             getWorld().addObject(new Explosion(), Y, Y);
             getWorld().addObject(new Explosion(), Y2, X2);
             getWorld().addObject(new Explosion(), Y3, X3);
             getWorld().addObject(new Explosion(), Y4, X4);
-
         }
         if(CubeClean != null) {
             getWorld().removeObject(CubeClean);
