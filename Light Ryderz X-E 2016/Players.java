@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+ import java.util.List;
 /**
  * Write a description of class Players here.
  * 
@@ -30,6 +30,31 @@ public class Players extends Actor
         Actor CubeSpeed = getOneObjectAtOffset(0, 0, PowerCubeSpeed.class);
         Actor CubeTeleport = getOneObjectAtOffset(0,0, PowerCubeTeleport.class);
         Actor CubeInvincibility = getOneObjectAtOffset(0,0, PowerCubeInvincibility.class);
+        Actor CubeClean = getOneObjectAtOffset(0, 0, PowerCubeClean.class);
+        Actor CubeExplosion = getOneObjectAtOffset(0, 0, PowerCubeExplosion.class);
+        List Lynes = getObjectsInRange(800, Lynes.class);
+        if(CubeExplosion != null) {
+            getWorld().removeObject(CubeExplosion);
+            int X = Greenfoot.getRandomNumber(800);
+            int Y = Greenfoot.getRandomNumber(800);
+            int X2 = Greenfoot.getRandomNumber(800);
+            int Y2 = Greenfoot.getRandomNumber(800);
+            int X3 = Greenfoot.getRandomNumber(800);
+            int Y3 = Greenfoot.getRandomNumber(800);
+            int X4 = Greenfoot.getRandomNumber(800);
+            int Y4 = Greenfoot.getRandomNumber(800);
+            int X5 = Greenfoot.getRandomNumber(800);
+            int Y5 = Greenfoot.getRandomNumber(800);
+            getWorld().addObject(new Explosion(), X, Y);
+            getWorld().addObject(new Explosion(), X2, Y2);
+            getWorld().addObject(new Explosion(), X3, Y3);
+            getWorld().addObject(new Explosion(), X4, Y4);
+            getWorld().addObject(new Explosion(), X5, Y5);            
+        }
+        if(CubeClean != null) {
+            getWorld().removeObject(CubeClean);
+            getWorld().removeObjects(Lynes);
+        }
         if(CubeSpeed != null) {
             getWorld().removeObject(CubeSpeed);
             PowerSpeed = true;
