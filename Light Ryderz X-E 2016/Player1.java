@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player1 extends Players
 {
-    String Up = "up";
     public void act() 
     {
         powerUp();
@@ -17,7 +16,6 @@ public class Player1 extends Players
         linesBlue();
         dead();     
         time();
-        clicked();
         
     }    
 }

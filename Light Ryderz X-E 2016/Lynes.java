@@ -12,7 +12,7 @@ public class Lynes extends Actor
     public void dead(){   
         time++;
         Actor enemy = getOneObjectAtOffset(0,0, Players.class); 
-        if (time > 15) {   
+        if (time > 20) {   
         if (enemy != null)
         {                        
             Players p = (Players) enemy;

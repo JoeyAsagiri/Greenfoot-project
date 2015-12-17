@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
- import java.util.List;
+import java.util.List;
 /**
  * Write a description of class Players here.
  * 
@@ -17,39 +17,34 @@ public class Players extends Actor
     boolean PowerSpeed;
     boolean PowerInvincibility;
     int time;
-    
-    public void clicked(){
-        if(Greenfoot.mouseClicked(this)) {           
-          
+    public void time(){
+        if (PowerInvincibility){  
+            time++;
+            if (time >= 120) {
+                PowerInvincibility = false;
+                time = 0;
+            }
         }
     }
-    public void time(){
-     if (PowerInvincibility){  
-         time++;
-         if (time >= 120) {
-             PowerInvincibility = false;
-             time = 0;
-            }
-    }
-}
+
     public void removeMe()
     {
         if (PowerInvincibility) {
         }
         else {
-      getWorld().addObject(new Explosion(), getX(), getY());
-      getWorld().removeObject(this);     
+            getWorld().addObject(new Explosion(), getX(), getY());
+            getWorld().removeObject(this);     
+        }
     }
-    }
-    
+
     public void dead(){
         Actor enemy;
         enemy = getOneObjectAtOffset(0,0, Players.class);            
         if (enemy != null)
         {  
-           removeMe();            
+            removeMe();            
         }      
-   }
+    }
 
     public void powerUp(){        
         Actor CubeSpeed = getOneObjectAtOffset(0, 0, PowerCubeSpeed.class);
@@ -93,7 +88,7 @@ public class Players extends Actor
             PowerInvincibility = true;            
         }        
         if (PowerSpeed){
-         speed = 8;
+            speed = 8;
         }
     }
 

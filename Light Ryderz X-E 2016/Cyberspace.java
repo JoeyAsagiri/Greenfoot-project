@@ -18,9 +18,27 @@ public class Cyberspace extends World
         addObject(new Multi2(), 200, 500);
         addObject(new Multi3(), 200, 700);
         addObject(new Multi4(), 600, 500);
+        addObject(new Turbo(), 600, 700);
         setPaintOrder(Explosion.class, Players.class, Lynes.class, Multi4.class, Multi3.class, Multi2.class, Menu.class, PowerCubes.class);
     }
-  
+
+    public void restart(){
+        if(Greenfoot.isKeyDown("r")){
+            List players = getObjects(Players.class);
+            List lynes = getObjects(Lynes.class);
+            List menus = getObjects(Menu.class);
+            removeObjects(menus);
+            removeObjects(lynes);
+            removeObjects(players);
+            addObject(new Menu(), 400, 400);
+            addObject(new Multi2(), 200, 500);
+            addObject(new Multi3(), 200, 700);
+            addObject(new Multi4(), 600, 500);
+            addObject(new Turbo(), 600, 700); 
+            setPaintOrder(Explosion.class, Players.class, Lynes.class, Multi4.class, Multi3.class, Multi2.class, Menu.class, PowerCubes.class);
+        }
+    }
+
     public void cubeSpawn(){
         int cubeRandom = Greenfoot.getRandomNumber(5);
         int X = Greenfoot.getRandomNumber(400) + 200;
@@ -49,6 +67,7 @@ public class Cyberspace extends World
     public void act(){
         powerUpSpawn();
         sound.play();
+        restart();
     }
 
     public void stopped(){
