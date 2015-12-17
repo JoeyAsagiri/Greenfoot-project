@@ -9,18 +9,18 @@ import java.util.List;
 public class Cyberspace extends World
 {
     int timer = 0;
-    GreenfootSound sound = new GreenfootSound("music.mp3");
+    GreenfootSound sound = new GreenfootSound("music.mp3");    
+    boolean clicked;
     public Cyberspace()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1); 
-        addObject(new Player1(), 50, 750);
-        addObject(new Player2(), 50, 50);
-        addObject(new Player3(), 750, 50);
-        addObject(new Player4(), 750, 750);
-
+        addObject(new Menu(), 400, 400);
+        addObject(new Multi2(), 200, 500);
+        addObject(new Multi3(), 200, 700);
+        addObject(new Multi4(), 600, 500);
+        setPaintOrder(Explosion.class, Players.class, Lynes.class, Multi4.class, Multi3.class, Multi2.class, Menu.class, PowerCubes.class);
     }
-    
+  
     public void cubeSpawn(){
         int cubeRandom = Greenfoot.getRandomNumber(5);
         int X = Greenfoot.getRandomNumber(400) + 200;

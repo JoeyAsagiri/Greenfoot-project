@@ -18,6 +18,11 @@ public class Players extends Actor
     boolean PowerInvincibility;
     int time;
     
+    public void clicked(){
+        if(Greenfoot.mouseClicked(this)) {           
+          
+        }
+    }
     public void time(){
      if (PowerInvincibility){  
          time++;
