@@ -39,8 +39,10 @@ public class Players extends Actor
 
     public void dead(){
         Actor enemy;
+        Actor enemy2;
+        enemy2 = getOneObjectAtOffset(0,0, TheBoss.class);
         enemy = getOneObjectAtOffset(0,0, Players.class);            
-        if (enemy != null)
+        if (enemy != null || enemy2 != null)
         {  
             removeMe();            
         }      
