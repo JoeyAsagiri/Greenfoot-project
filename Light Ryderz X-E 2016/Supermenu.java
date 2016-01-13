@@ -23,7 +23,6 @@ public class Supermenu extends World
     }  
 public void act(){
     sound.play();
-    Bossfight.sound.stop();
 }
 
 public void stopped(){

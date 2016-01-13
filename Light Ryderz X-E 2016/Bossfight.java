@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bossfight extends World
 {
-public static final GreenfootSound sound = new GreenfootSound("freeze.mp3");    
     /**
      * Constructor for objects of class Bossfight.
      * 
@@ -27,10 +26,8 @@ public static final GreenfootSound sound = new GreenfootSound("freeze.mp3");
         }
     }
         public void act(){
-        sound.play();
         restart();
     }
     public void stopped(){
-        sound.stop();
     }
 }
